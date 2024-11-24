@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>School detail</h1>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">School Name : {{school.name}}</h5>
+        <p class="card-text">Address : {{school.address}}</p>
+        <p class="card-text">School Population : {{school.population}}</p>
+        <p class="card-text">Faculty : {{school.faculty}}</p>
+        <p class="card-text">School Details : {{school.details}}</p>
+      </div>
+      <div class="d-flex">
+      <div class="me-5 ms-5"><a href="{% url 'log:SchoolEditView' school.id %}">edit</a></div>
+      <div><a href="{% url 'log:SchoolDelete' school.id %}">delete</a></div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
